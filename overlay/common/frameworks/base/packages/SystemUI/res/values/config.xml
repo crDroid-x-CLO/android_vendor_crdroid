@@ -43,4 +43,7 @@
 
     <!-- Configuration to swipe to open glanceable hub -->
     <bool name="config_swipeToOpenGlanceableHub">true</bool>
+
+    <!-- Whether to show activity indicators in the status bar -->
+    <bool name="config_showActivity">false</bool>
 </resources>
