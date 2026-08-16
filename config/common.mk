@@ -316,3 +316,7 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+
+ifeq ($(WITH_GMS),true)
+include vendor/gapps/arm64/arm64-vendor.mk
+endif
