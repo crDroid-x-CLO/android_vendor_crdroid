@@ -5,7 +5,12 @@ $(call inherit-product-if-exists, vendor/addons/config.mk)
 
 # Exclude repos from bp scanning
 PRODUCT_SOURCE_ROOT_DIRS += -kernel/platform
-PRODUCT_SOURCE_ROOT_DIRS += -prebuilts/misc/protobuf_vendorcompat
+PRODUCT_SOURCE_ROOT_DIRS += -prebuilts/misc/protobuf_vendorcompat \
+    -platform_testing/libraries/sdv \
+    -platform_testing/tests/sdv \
+    -platform_testing/libraries/automotive/display_safety \
+    -platform_testing/tests/automotive/display_safety \
+    -device/generic/trusty/microdroid
 
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
 -include $(sort $(wildcard vendor/*/*/exclude-bp.mk))
@@ -309,3 +314,7 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+
+ifeq ($(WITH_GMS),true)
+include vendor/gapps/arm64/arm64-vendor.mk
+endif

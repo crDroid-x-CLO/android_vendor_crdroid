@@ -27,6 +27,12 @@ PRODUCT_PACKAGES += \
     unrar \
     zstd
 
+# GMS
+WITH_GMS ?= false
+ifeq ($(WITH_GMS),true)
+PRODUCT_SOONG_NAMESPACES += vendor/gapps/arm64
+endif
+
 # Include Lineage LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/dictionaries
