@@ -14,7 +14,7 @@
 
 TARGET_SUPPORTS_32_BIT_APPS := true
 
-$(call inherit-product, build/target/product/gsi_release.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 $(call inherit-product, device/google/atv/products/aosp_tv_arm.mk)
 
 include vendor/lineage/build/target/product/lineage_generic_tv_target.mk
